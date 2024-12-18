@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>大兴安岭旅游指南</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-image: url('imgs/headview.png');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 10px 0;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 50px;
+      font-weight: bold;
+      background: linear-gradient(45deg, #a5c0d7, #00bfff, #3063d0);
+      background-size: 400% 400%;
+      background-clip: text;
+      color: transparent;
+      animation: gradientAnimation 3s ease infinite;
+    }
+
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    nav {
+      background-color: #2E8B57;
+      overflow: hidden;
+    }
+    nav ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      text-align: center;
+    }
+    nav ul li {
+      display: inline;
+      padding: 10px 20px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+    #search-box {
+      display: inline-block;
+      padding: 10px 20px;
+    }
+    #search-box input[type="text"] {
+      padding: 5px;
+      font-size: 16px;
+    }
+    #search-box input[type="submit"] {
+      padding: 5px 10px;
+      font-size: 16px;
+      background-color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    .slideshow-container {
+      max-width: 800px;
+      position: relative;
+      margin: 20px auto;
+    }
+    .slides {
+      display: none;
+    }
+    .slides img {
+      width: 100%;
+      height: auto;
+    }
+
+    .tour-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin: 20px;
+    }
+    .tour-item {
+      position: relative;
+      width: 30%;
+      margin-bottom: 20px;
+    }
+    .tour-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .tour-item .description {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 18px;
+      color: #333;
+    }
+    .tour-item:hover .description {
+      background-color: rgba(255, 255, 255, 1);
+    }
+
+    footer {
+      background: #333;
+      color: #fff;
+      padding: 15px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      position: relative;
+      bottom: 0;
+    }
+
+    .footer-content {
+      text-align: center;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    a {
+      color: rgb(9, 227, 125);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .map-container {
+      margin: 20px auto;
+      width: 90%;
+      height: 400px;
+    }
+
+    /* 新增的按钮样式 */
+    .tour-buttons {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .tour-buttons button {
+      background-color: #2E8B57;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 0 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .tour-buttons button:hover {
+      background-color: #4CAF50;
+    }
+
+    /* 弹出框的样式 */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding-top: 60px;
+    }
+
+    .modal-content {
+      background-color: white;
+      margin: 5% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 600px;
+      text-align: center;
+    }
+
+    .modal-content img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>极寒之地-大兴安岭</h1>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="mainpage.html">首页</a></li>
+    <li><a href="plants.html">植物介绍</a></li>
+    <li><a href="animals.html">动物与生物多样性</a></li>
+    <li><a href="geography.html">地理与地貌</a></li>
+    <li><a href="history.html">人文历史</a></li>
+    <li><a href="tourism.html">旅游指南</a></li>
+    <li id="search-box">
+      <form action="/search" method="GET">
+        <input type="text" name="query" placeholder="搜索..." required>
+        <input type="submit" value="搜索">
+      </form>
+    </li>
+  </ul>
+</nav>
+
+<main>
+  <h2 style="text-align:center;">点击图片查看介绍，点击地点跳转景点位置</h2>
+  <!-- 新增景点按钮 -->
+  <div class="tour-buttons">
+    <button onclick="jumpToLocation([122.351947, 53.482641], '北极村')">北极村</button>
+    <button onclick="jumpToLocation([124.152417, 50.439426], '北山森林公园')">北山森林公园</button>
+    <button onclick="jumpToLocation([123.277534, 53.56019], '中国最北点')">中国最北点</button>
+    <button onclick="jumpToLocation([124.069336, 50.382863], '映山红滑雪场')">映山红滑雪场</button>
+    <button onclick="jumpToLocation([122.2001,53.2955], '观音山')">观音山</button>
+  </div>
+  <div class="map-container" id="map"></div>
+
+  <div class="tour-container">
+    <!-- 景点1 -->
+    <div class="tour-item">
+      <img src="imgs/ig1.png" alt="北极村" onclick="showDetails('北极村', '北极村是国家AAAAA级旅游景区，素有“金鸡之冠”、“神州北极”和“不夜城”之美誉，是全国观赏北极光的最佳观测点，是中国“北方第一哨”所在地，也是中国最北的城镇。', 'imgs/ig1.png')">
+      <div class="description">北极村</div>
+    </div>
+    <!-- 景点2 -->
+    <div class="tour-item">
+      <img src="imgs/ig2.png" alt="北山森林公园" onclick="showDetails('北山森林公园', '北山森林公园位于大兴安岭的北部，森林覆盖率高，是一个理想的自然景区。这里四季分明，秋冬时节是观赏红叶和滑雪的好时机。游客可以在这里徒步旅行，享受大自然的宁静与美丽。', 'imgs/ig2.png')">
+      <div class="description">北山森林公园</div>
+    </div>
+    <!-- 景点3 -->
+    <div class="tour-item">
+      <img src="imgs/ig3.png" alt="中国最北点" onclick="showDetails('中国最北点', '中国最北点位于龙江第一湾景区内的乌苏里卡伦浅滩上，隔黑龙江与俄罗斯相望，紧邻卡伦小镇，地理坐标为东经123°15′30″，北纬53°33′42″，海拔287米。设有一块长8米、高2.45米的泰山石作为最北地理标识，并由中国书法家协会张雪明大师题刻“中国最北点”五个大字。中国最北点周边地势平缓，拥有黑龙江边特有的小气候，适宜耕种，有大量芍药、野百合、野罂粟竞相开放。春秋两季，秋沙鸭、绿头鸭等各类候鸟在此停留休憩，更有猫头鹰、林鸮、野猪、犴、狍子等虫鱼鸟兽常年悠游于此，生态环境极为优越。图强林业局将牢牢抓住“中国最北点”唯一性这一优势，按照《图强林业局全域旅游总体规划》，修建以最北坐标点为核心、以科普泛博物馆为特色的体验性地标广场，并完善相关配套基础设施，将其打造成爱国主义教育基地和最北地理科普教育基地。', 'imgs/ig3.png')">
+      <div class="description">中国最北点</div>
+    </div>
+    <!-- 景点4 -->
+    <div class="tour-item">
+      <img src="imgs/ig4.png" alt="映山红滑雪场" onclick="showDetails('映山红滑雪场', '映山红滑雪场位于黑龙江省漠河市，是大兴安岭的滑雪胜地，适合各类滑雪爱好者。这里有丰富的滑雪资源和设施，吸引着国内外的滑雪游客。冬季的雪景迷人，是滑雪和冬季运动的理想之地。', 'imgs/ig4.png')">
+      <div class="description">映山红滑雪场</div>
+    </div>
+    <!-- 景点5 -->
+    <div class="tour-item">
+      <img src="imgs/ig5.png" alt="观音山" onclick="showDetails('观音山', '观音山位于漠北公路50公里处，景区在整体设计上以景观轴线贯穿南北，连接北部庙区和南部度假休闲区。北部庙区主要进行佛教朝圣、生态休闲等活动，山上奉安的北极林海观音是海南南山海上108米观音的原身像，高10.8米，2006年11月9日奉按在观音山，为一体化三尊造型，三面分别是持箧观音，持莲观音，持珠观音。南部休闲区提供度假休闲、服务接待，营造贴近自然的休闲旅游环境。观音山景区是游人膜拜瞻仰必到之处。', 'imgs/ig5.png')">
+      <div class="description">观音山</div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2024 东北林业大学Web前端课程设计 | 仅供展示</p>
+</footer>
+
+<!-- 弹出框 -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <img id="modal-image" src="" alt="景点图片">
+    <p id="modal-description"></p>
+  </div>
+</div>
+
+<script src="https://webapi.amap.com/maps?v=2.0&key=a7d3e3f43e387c9daf1b56f173887a29"></script>
+<script>
+  // 初始化地图
+  var map = new AMap.Map('map', {
+    zoom: 16,
+    center: [122.05, 50.45]  // 大兴安岭的经纬度
+  });
+
+  // 景点坐标数据
+  var markers = [
+    { position: [122.351947, 53.482641], title: "北极村", content: "北极村位于黑龙江省大兴安岭地区漠河市北极镇，地处北纬53°33′30″、东经122°20'27.14，是国家AAAAA级旅游景区，素有“金鸡之冠”、“神州北极”和“不夜城”之美誉，是全国观赏北极光的最佳观测点，是中国“北方第一哨”所在地，也是中国最北的城镇。" },
+    { position: [124.152417, 50.439426], title: "北山森林公园", content: "北山森林公园是大兴安岭的自然景区，适合徒步旅行和观光。" },
+    { position: [123.277534, 53.56019], title: "中国最北点", content: "中国最北点位于龙江第一湾景区内的乌苏里卡伦浅滩上，隔黑龙江与俄罗斯相望，紧邻卡伦小镇。" },
+    { position: [124.069336, 50.382863], title: "映山红滑雪场", content: "映山红滑雪场是滑雪爱好者的天堂，拥有丰富的滑雪资源。" },
+    { position: [122.2001,53.2955], title: "观音山", content: "观音山位于漠北公路50公里处，景区在整体设计上以景观轴线贯穿南北，连接北部庙区和南部度假休闲区。北部庙区主要进行佛教朝圣、生态休闲等活动，山上奉安的北极林海观音是海南南山海上108米观音的原身像，高10.8米，2006年11月9日奉按在观音山，为一体化三尊造型，三面分别是持箧观音，持莲观音，持珠观音。南部休闲区提供度假休闲、服务接待，营造贴近自然的休闲旅游环境。观音山景区是游人膜拜瞻仰必到之处。" }
+  ];
+
+  // 设置景点标记
+  markers.forEach(function(marker) {
+    var amapMarker = new AMap.Marker({
+      position: marker.position,
+      map: map,
+      title: marker.title
+    });
+
+    amapMarker.on('click', function() {
+      alert(marker.content); // 弹出景点介绍
+    });
+  });
+
+  // 点击按钮跳转至景点坐标
+  function jumpToLocation(coordinates, name) {
+    map.setCenter(coordinates);  // 跳转到指定坐标
+    var marker = new AMap.Marker({
+      position: coordinates,
+      map: map,
+      title: name
+    });
+    //alert(name + " 的位置已显示在地图上！");
+  }
+
+  // 获取浏览器位置信息
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var userPos = [position.coords.longitude, position.coords.latitude];
+      map.setCenter(userPos);  // 定位到用户当前位置
+      var userMarker = new AMap.Marker({
+        position: userPos,
+        map: map,
+        title: '您当前的位置'
+      });
+      //alert('您的当前位置已显示！');
+    }, function() {
+      alert("定位失败，请允许访问您的位置！");
+    });
+  } else {
+    alert("您的浏览器不支持地理定位！");
+  }
+
+  // 弹出框显示景点详情
+  function showDetails(name, description, image) {
+    var modal = document.getElementById('myModal');
+    var modalImage = document.getElementById('modal-image');
+    var modalDescription = document.getElementById('modal-description');
+
+    modal.style.display = "block";
+    modalImage.src = image;
+    modalDescription.textContent = description;
+
+    var span = document.getElementsByClassName("close")[0];
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  }
+</script>
+
+</body>
+</html>

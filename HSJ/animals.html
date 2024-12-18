@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大兴安岭动物与生物</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+      background-image: url('imgs/headview.png'); /* 背景图片 */
+      background-size: cover; /* 让背景图片覆盖整个header */
+      background-position: center; /* 背景居中显示 */
+      color: white;
+      padding: 10px 0; /* 增加顶部和底部的间距 */
+      text-align: center; /* 使标题居中 */
+    }
+    header h1 {
+      font-size: 50px;
+      font-weight: bold;
+      background: linear-gradient(45deg,#a5c0d7, #00bfff, #3063d0); /* 渐变色 */
+      background-size: 400% 400%; /* 背景渐变的大小 */
+      background-clip: text; /* 背景裁剪到文本 */
+      color: transparent; /* 文字透明 */
+      animation: gradientAnimation 3s ease infinite; /* 动画效果 */
+    }
+
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    nav {
+      background-color: #2E8B57;
+      overflow: hidden;
+    }
+    nav ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      text-align: center;
+    }
+    nav ul li {
+      display: inline;
+      padding: 10px 20px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+    #search-box {
+      display: inline-block;
+      padding: 10px 20px;
+    }
+    #search-box input[type="text"] {
+      padding: 5px;
+      font-size: 16px;
+    }
+    #search-box input[type="submit"] {
+      padding: 5px 10px;
+      font-size: 16px;
+      background-color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+        main {
+            margin: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #228B22;
+        }
+
+        .animal-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .animal {
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #fff;
+            width: 300px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .animal:hover {
+            transform: scale(1.05);
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        footer {
+      background: #333;
+      color: #fff;
+      padding: 15px 0;  /* 上下内边距 */
+      display: flex;     /* 使用 flex 布局 */
+      justify-content: center;  /* 水平居中 */
+      align-items: center;      /* 垂直居中 */
+      width: 100%;      /* 宽度100% */
+      position: relative;
+      bottom: 0;
+    }
+
+    .footer-content {
+      text-align: center;  /* 确保内容在footer中居中 */
+    }
+
+    footer p {
+      margin: 0; /* 去除段落的默认外边距 */
+      font-size: 14px;
+    }
+
+        a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>极寒之地-大兴安岭</h1>
+    </header>
+
+    <nav>
+        <ul>
+          <li><a href="mainpage.html">首页</a></li>
+          <li><a href="plants.html">植物介绍</a></li>
+          <li><a href="animals.html">动物与生物多样性</a></li>
+          <li><a href="geography.html">地理与地貌</a></li>
+          <li><a href="history.html">人文历史</a></li>
+          <li><a href="tourism.html">旅游指南</a></li>
+          <li id="search-box">
+            <form action="/search" method="GET">
+              <input type="text" name="query" placeholder="搜索..." required>
+              <input type="submit" value="搜索">
+            </form>
+          </li>
+        </ul>
+      </nav>
+    
+
+    <main>
+        <h2>点击可查看具体信息</h2>
+        <div class="animal-container">
+
+            <div class="animal" onclick="location.href='./AnimalList/tiger.html'">
+                <h3>东北虎</h3>
+                <img src="https://img2.17getfun.com/Fq87-3FQTLx_RtMjhNzkxIEaoYRI" alt="东北虎">
+                <p>东北虎是中国特有的濒危物种，主要栖息在大兴安岭的深山老林中。</p>
+            </div>
+
+            <div class="animal" onclick="location.href='./AnimalList/black_bear.html'">
+                <h3>黑熊</h3>
+                <img src="https://pic.rmb.bdstatic.com/bjh/240413/dump/3f1149e48d0ff86064744781c28c8899.jpeg" alt="黑熊">
+                <p>黑熊在大兴安岭广泛分布，主要以植物性食物为主。</p>
+            </div>
+
+            <div class="animal" onclick="location.href='./AnimalList/sika_deer.html'">
+                <h3>梅花鹿</h3>
+                <img src="https://img0.baidu.com/it/u=3750869617,3516873450&fm=253&fmt=auto&app=138&f=JPEG?w=505&h=331" alt="梅花鹿">
+                <p>梅花鹿以其优雅的姿态和美丽的花纹而闻名。</p>
+            </div>
+
+            <div class="animal" onclick="location.href='./AnimalList/crane.html'">
+                <h3>丹顶鹤</h3>
+                <img src="https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/assets/2018/12/26-12-2018-Cranes-UNDP+China_2.jpg/image1170x530cropped.jpg" alt="丹顶鹤">
+                <p>丹顶鹤是中国的国鸟，栖息在湿地和草地中。</p>
+            </div>
+
+            <div class="animal" onclick="location.href='./AnimalList/roe_deer.html'">
+                <h3>狍子</h3>
+                <img src="https://tech.cnr.cn/techqt/201312/W020131224382023178875.jpg" alt="狍子">
+                <p>狍子是一种中等体型的鹿类，以嫩草和树叶为食。</p>
+            </div>
+
+            <div class="animal" onclick="location.href='./AnimalList/brown_bear.html'">
+                <h3>棕熊</h3>
+                <img src="https://t11.baidu.com/it/u=3940404747,231224348&fm=30&app=106&f=JPEG?w=640&h=454&s=15A5D815C013BBD406C558A70300E080" alt="棕熊">
+                <p>棕熊是一种大型哺乳动物，适应寒冷的气候。</p>
+            </div>
+
+            <div class="animal" onclick="location.href='./AnimalList/kun.html'">
+                <h3>花尾榛鸡</h3>
+                <img src="https://t10.baidu.com/it/u=3484974311,221185026&fm=30&app=106&f=JPEG?w=640&h=360&s=3436473000F0E3C65E9434CE030070A0" alt="花尾榛鸡">
+                <p>花尾榛鸡是一种生活在森林中的鸟类，以其美丽的羽毛而闻名。</p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 东北林业大学Web前端课程设计 | 仅供展示</p>
+          </div>
+    </footer>
+</body>
+
+</html>

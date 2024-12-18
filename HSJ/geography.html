@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大兴安岭地理地貌</title>
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-image: url('imgs/headview.png'); /* 背景图片 */
+      background-size: cover; /* 让背景图片覆盖整个header */
+      background-position: center; /* 背景居中显示 */
+      color: white;
+      padding: 10px 0; /* 增加顶部和底部的间距 */
+      text-align: center; /* 使标题居中 */
+    }
+    header h1 {
+      font-size: 50px;
+      font-weight: bold;
+      background: linear-gradient(45deg, #a5c0d7, #00bfff, #3063d0); /* 渐变色 */
+      background-size: 400% 400%; /* 背景渐变的大小 */
+      background-clip: text; /* 背景裁剪到文本 */
+      color: transparent; /* 文字透明 */
+      animation: gradientAnimation 3s ease infinite; /* 动画效果 */
+    }
+
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    footer {
+      background: #333;
+      color: #fff;
+      padding: 15px 0;  /* 上下内边距 */
+      display: flex;     /* 使用 flex 布局 */
+      justify-content: center;  /* 水平居中 */
+      align-items: center;      /* 垂直居中 */
+      width: 100%;      /* 宽度100% */
+      position: relative;
+      bottom: 0;
+    }
+
+    .footer-content {
+      text-align: center;  /* 确保内容在footer中居中 */
+    }
+
+    footer p {
+      margin: 0; /* 去除段落的默认外边距 */
+      font-size: 14px;
+    }
+
+    nav {
+      background-color: #2E8B57;
+      overflow: hidden;
+    }
+    nav ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      text-align: center;
+    }
+    nav ul li {
+      display: inline;
+      padding: 10px 20px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+    a {
+      color: rgb(9, 227, 125);
+      text-decoration: none;
+      font-weight: bold;
+    }
+    #search-box {
+      display: inline-block;
+      padding: 10px 20px;
+    }
+    #search-box input[type="text"] {
+      padding: 5px;
+      font-size: 16px;
+    }
+    #search-box input[type="submit"] {
+      padding: 5px 10px;
+      font-size: 16px;
+      background-color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    .main {
+        padding: 20px;
+        margin-right: 300px;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .section {
+        margin-bottom: 5%;
+    }
+
+    .image-location {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    /* 图片样式调整：加上圆角，和正文保持距离 */
+    .image-location img {
+        border-radius: 10px;
+        margin-right: 20px; /* 使图片与正文有一些距离 */
+    }
+
+    .location.visible {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 2.5s ease, visibility 0s;
+    }
+
+    .aside {
+        position: fixed;
+        top: 210px;
+        right: 20px;
+        width: 275px;
+        padding: 10px;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .inner_side {
+        padding: 20px 5px;
+    }
+
+    .options {
+        max-height: none;
+        overflow: hidden;
+        margin-top: 10px;
+    }
+
+    .option-item {
+        padding: 12px;
+        cursor: pointer;
+        transition: color 0.3s, background-color 0.3s, font-size 0.3s;
+        border-radius: 5px;
+        margin: 5px 0;
+        background-color: #f9f9f9;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .option-item:hover {
+        background-color: #e7f4e4;
+        color: #2ecc71;
+    }
+
+    #mainImage1,
+    #mainImage2,
+    #mainImage3,
+    #mainImage4,
+    #mainImage5 {
+        width: 350px;
+        height: 350px;
+        transition: transform 0.3s;
+    }
+
+    #mainImage1:hover,
+    #mainImage2:hover,
+    #mainImage3:hover,
+    #mainImage4:hover,
+    #mainImage5:hover {
+        transform: scale(1.1);
+        z-index: 1;
+    }
+
+    /* 调整正文字体 */
+    .section h2 {
+        font-size: 24px;
+        color: #333;
+    }
+
+    .section p {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #555;
+    }
+
+    .footer-content p {
+        font-size: 14px;
+    }
+
+    /* 内容导航字体 */
+    .inner_side h3 {
+        font-size: 22px;
+        color: #2E8B57;
+    }
+
+    .option-item {
+        font-size: 16px;
+    }
+</style>
+</head>
+<body>
+<header>
+  <h1>极寒之地-大兴安岭</h1>
+</header>
+
+<nav>
+    <ul>
+      <li><a href="mainpage.html">首页</a></li>
+      <li><a href="plants.html">植物介绍</a></li>
+      <li><a href="animals.html">动物与生物多样性</a></li>
+      <li><a href="geography.html">地理与地貌</a></li>
+      <li><a href="history.html">人文历史</a></li>
+      <li><a href="tourism.html">旅游指南</a></li>
+      <li id="search-box">
+        <form action="/search" method="GET">
+          <input type="text" name="query" placeholder="搜索..." required>
+          <input type="submit" value="搜索">
+        </form>
+      </li>
+    </ul>
+</nav>
+
+<div class="main" onmouseover="showAllLocations()" onmouseout="hideAllLocations()">
+    <h1>中国重要地理分界线——大兴安岭</h1>
+
+    <!-- 第一部分 -->
+    <div class="section">
+        <hr>
+        <h2 id="section1">1.位置</h2>
+        <div class="image-location">
+            <img id="mainImage1" src="./imgs/img02.png" alt="大兴安岭经纬度">
+            <div class="location" id="location1">
+                <p data-image="./img02.png">北纬43°至北纬53°30′，东经117°20′至东经126°之间。位于我国北部边陲，在内蒙古自治区东北部，黑龙江西北部。</p>
+                <p data-image="./img03.png">东连绵延千里的小兴安岭，西依呼伦贝尔大草原，南达肥沃富庶的松嫩平原，北与俄罗斯隔黑龙江相望。（南北长约365km，东西宽约335km）</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第二部分 -->
+    <div class="section">
+        <hr>
+        <h2 id="section2">2.地形</h2>
+        <div class="image-location">
+            <img id="mainImage2" src="./imgs/img01.png" alt="大兴安岭地形">
+            <div class="location" id="location2">
+                <p data-image="./img01.png">全区地形总势呈东北—西南走向，属浅山丘陵地带。北部、西部和中部高。平均海拔573米；黄岗梁是大兴安岭最高峰，海拔2029米；最低海拔180米，是呼玛县三卡乡沿江村。伊勒呼里山西东走向，横卧本区，东低西高，400千米长，系黑龙江水系和嫩江水系的分水岭。中山区相对海拔300～500米，分布于本区西部和中部的新林区、呼中区、塔河县。山体由一系列宽缓复背斜组成，地形起伏大，切割深。低山区相对海拔200～300米，主要分布于岭东的呼玛县和岭南的松岭区、加格达奇区。山体浑圆，山坡和缓，坡角一般为15～30度。丘陵区相对海拔50～200米，分布于东部、南部和北部。地面呈岗阜状起伏，坡长而缓，坡角一般为10～15度。山间盆地，分布于全区河谷地带。河谷宽阔，谷底狭窄，直线河谷较多。</p>
+                <p data-image="./img04.png">大兴安岭地势呈西高东低，位于地势第二阶梯东缘，第二梯阶第三梯结合部，大兴安岭山脊以东为第三阶梯地，以西为第二阶梯地。西部为高纬寒冻地貌类型区，东部为高寒侵蚀地貌类型区。地貌由中山、低山、丘陵和山间盆构成。中山有山脉形态，但分割较碎。低山山形圆浑，地面零碎，较丘陵分布规则。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第三部分 -->
+    <div class="section">
+        <hr>
+        <h2 id="section3">3.地势</h2>
+        <div class="image-location">
+            <img id="mainImage3" src="./imgs/img05.png" alt="大兴安岭地势">
+            <div class="location" id="location3">
+                <p data-image="./img05.png">大兴安岭地势呈西高东低，位于地势第二阶梯东缘，第二梯阶第三梯结合部，大兴安岭山脊以东为第三阶梯地，以西为第二阶梯地。西部为高纬寒冻地貌类型区，东部为高寒侵蚀地貌类型区。</p>
+                <p data-image="./img06.png">该区地形起伏大，切割深，主要受地壳运动的影响，形成了大兴安岭丰富多样的地形地貌。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第四部分 -->
+    <div class="section">
+        <hr>
+        <h2 id="section4">4.气候</h2>
+        <div class="image-location">
+            <img id="mainImage4" src="./imgs/img07.png" alt="大兴安岭气候">
+            <div class="location" id="location4">
+                <p data-image="./img07.png">大兴安岭地区属于温带大陆性气候，四季分明。冬季漫长寒冷，夏季短暂而温暖。降水主要集中在夏季，年均降水量500-700毫米，冬季降水量少，湿度较低。</p>
+                <p data-image="./img08.png">气温年较差大，冬季气温可降至-40℃，而夏季气温可升至30℃以上，温差可达70℃。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第五部分 -->
+    <div class="section">
+        <hr>
+        <h2 id="section5">5.自然资源</h2>
+        <div class="image-location">
+            <img id="mainImage5" src="./imgs/img09.png" alt="大兴安岭自然资源">
+            <div class="location" id="location5">
+                <p data-image="./img09.png">大兴安岭是我国重要的自然资源宝库，林木资源丰富，矿产资源多样。拥有丰富的森林资源，主要树种有红松、落叶松、白桦等。</p>
+                <p data-image="./img10.png">此外，煤、铁、金、银、铅、锌等矿产资源也在大兴安岭地区广泛分布。</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<aside class="aside">
+    <div class="inner_side">
+        <h3>内容导航</h3>
+        <div class="options">
+            <div class="option-item" onclick="scrollToSection('section1')">1. 位置</div>
+            <div class="option-item" onclick="scrollToSection('section2')">2. 地形</div>
+            <div class="option-item" onclick="scrollToSection('section3')">3. 地势</div>
+            <div class="option-item" onclick="scrollToSection('section4')">4. 气候</div>
+            <div class="option-item" onclick="scrollToSection('section5')">5. 自然资源</div>
+        </div>
+    </div>
+</aside>
+
+<footer>
+    <div class="footer-content">
+      <p>&copy; 2024 东北林业大学Web前端课程设计 | 仅供展示</p>
+    </div>
+</footer>
+
+<script>
+    function scrollToSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    function showAllLocations() {
+        for (let i = 1; i <= 5; i++) {
+            document.getElementById(`location${i}`).classList.add('visible');
+        }
+    }
+
+    function hideAllLocations() {
+        for (let i = 1; i <= 5; i++) {
+            document.getElementById(`location${i}`).classList.remove('visible');
+        }
+    }
+</script>
+</body>
+</html>

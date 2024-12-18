@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大兴安岭的植物资源</title>
+    <link rel="stylesheet" href="./css_style/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>极寒之地-大兴安岭</h1>
+    </header>
+      <nav>
+        <ul>
+          <li><a href="mainpage.html">首页</a></li>
+          <li><a href="plants.html">植物介绍</a></li>
+          <li><a href="animals.html">动物与生物多样性</a></li>
+          <li><a href="geography.html">地理与地貌</a></li>
+          <li><a href="history.html">人文历史</a></li>
+          <li><a href="tourism.html">旅游指南</a></li>
+          <li id="search-box">
+            <form action="/search" method="GET">
+              <input type="text" name="query" placeholder="搜索..." required>
+              <input type="submit" value="搜索">
+            </form>
+          </li>
+        </ul>
+      </nav>
+    <main class="container">
+        <section id="home" class="intro">
+            <h2>大兴安岭植物介绍</h2>
+            <p>大兴安岭位于中国东北部，是中国重要的自然保护区之一。这里拥有丰富的植物资源，包括多种草本植物、树木和草地植被。</p>
+            <p>大兴安岭位于中国东北部，横跨黑龙江省和内蒙古自治区，是中国最大的林区之一。</p>
+            <p>这里属于寒温带气候，冬季寒冷漫长，夏季短暂凉爽。大兴安岭拥有广袤的原始森林，主要树种包括兴安落叶松、樟子松、红皮云杉和白桦等。</p>
+            <img src="./imgs/daxinganling.png" alt="大兴安岭风景" class="intro-image">
+        </section>
+
+        <section id="plants" class="plants">
+            <h2 style="text-align: center;">植物资源分类[可点击查看]</h2>
+            <div class="categories-container">
+                <div class="category">
+                    <a href="./PlantList/plant.html" class="button" data-details-id="details1">
+                        草本
+                    </a>
+                </div>
+                <div class="category">
+                    <a href="./PlantList/tree.html" class="button" data-details-id="details2">
+                        树木
+                    </a>
+                </div>
+                <div class="category">
+                    <a href="./PlantList/grass.html" class="button" data-details-id="details3">
+                        草地植被
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+          <p>&copy; 2024 东北林业大学Web前端课程设计 | 仅供展示</p>
+        </div>
+      </footer>
+</body>
+
+</html>

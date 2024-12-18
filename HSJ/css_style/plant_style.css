@@ -1,0 +1,189 @@
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: opacity 0.3s ease-in-out;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fff;
+    margin: 10% auto;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 1000px;
+    max-height: 80vh;
+    z-index: 1001;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    overflow-y: auto;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+h2 {
+    text-align: center;
+    font-weight: bold;
+    color: #2E8B57;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    margin: 0;
+    padding: 0;
+  }
+
+p {
+    font-size: 20px;
+    line-height: 1.6;
+    text-align: justify;
+    max-width: 800px;
+    margin: auto;
+}
+  a {
+    color: rgb(9, 227, 125);
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+@media screen and (max-width: 1024px) {
+    .modal-content {
+        width: 90%;
+        height: auto;
+    }
+
+    .plant-item {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .plant-item {
+        flex: 1 1 100%;
+    }
+}
+
+/* 如果需要在小屏幕上也保持右上角定位，可以使用媒体查询 */
+@media (max-width: ¾00px) {
+    .nav-links {
+        justify-content: flex-end;
+        /* 保持右对齐 */
+    }
+}
+
+footer {
+    background: #f0f8ff;
+    padding: 15px 0;  /* 上下内边距 */
+    display: flex;    
+    width: 100%;
+    position: relative;
+    bottom: 0;
+  }
+
+.footer1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:sticky;
+    margin-top: 30px; 
+    width: 100%;
+}
+
+.back-button {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2em;  
+    padding: 12px 30px;  
+    background: linear-gradient(135deg, #6c63ff, #53b2fe);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.back-button:hover {
+    background: linear-gradient(135deg, #53b2fe, #6c63ff);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.plant-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.plant-item button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.plant-item button img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 10px;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.plant-item button p {
+    margin: 0;
+    font-size: 1.2em;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.plant-item button:hover {
+    opacity: 0.8;
+}

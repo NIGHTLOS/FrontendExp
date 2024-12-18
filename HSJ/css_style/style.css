@@ -1,0 +1,245 @@
+.intro {
+    text-align: center;
+    padding: 20px;
+}
+
+.intro h2 {
+    margin-bottom: 10px;
+}
+
+.intro p {
+    margin-bottom: 10px;
+}
+
+.intro-image {
+    width: 600px;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.about,
+.contact {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+.about h2,
+.contact h2 {
+    margin-bottom: 10px;
+}
+
+.contact address {
+    font-style: normal;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.categories-container {
+    display: flex;
+    justify-content: space-around;
+    /* 或者使用 space-between, center 等 */
+    flex-wrap: wrap;
+    /* 如果空间不够，允许换行 */
+}
+
+.category {
+    width: 300px;
+    max-width: 100%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    margin: 10px;
+}
+
+/* 美化按钮 */
+.button {
+    display: block;
+    width: 100%;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px 5px 0 0;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.button:hover {
+    background-color: #45a049;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 按钮激活时的样式 */
+.button.active {
+    background-color: #45a049;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.details {
+    display: none;
+
+}
+
+.details.active {
+    display: block;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-image: url('../imgs/headview.png');
+    /* 背景图片 */
+    background-size: cover;
+    /* 让背景图片覆盖整个header */
+    background-position: center;
+    /* 背景居中显示 */
+    color: white;
+    padding: 10px 0;
+    /* 增加顶部和底部的间距 */
+    text-align: center;
+    /* 使标题居中 */
+}
+
+header h1 {
+    font-size: 50px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #a5c0d7, #00bfff, #3063d0);
+    /* 渐变色 */
+    background-size: 400% 400%;
+    /* 背景渐变的大小 */
+    background-clip: text;
+    /* 背景裁剪到文本 */
+    color: transparent;
+    /* 文字透明 */
+    animation: gradientAnimation 3s ease infinite;
+    /* 动画效果 */
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+nav {
+    background-color: #2E8B57;
+    overflow: hidden;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    padding: 10px 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+#search-box {
+    display: inline-block;
+    padding: 10px 20px;
+}
+
+#search-box input[type="text"] {
+    padding: 5px;
+    font-size: 16px;
+}
+
+#search-box input[type="submit"] {
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+p {
+    font-size: 20px;
+    line-height: 1.6;
+    text-align: justify;
+    max-width: 800px;
+    margin: auto;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    padding: 15px 0;  /* 上下内边距 */
+    display: flex;     /* 使用 flex 布局 */
+    justify-content: center;  /* 水平居中 */
+    align-items: center;      /* 垂直居中 */
+    width: 100%;      /* 宽度100% */
+    position: relative;
+    bottom: 0;
+  }
+
+  .footer-content {
+    text-align: center;  /* 确保内容在footer中居中 */
+  }
+
+  footer p {
+    margin: 0; /* 去除段落的默认外边距 */
+    font-size: 14px;
+  }
+
+
+a {
+    color: rgb(9, 227, 125);
+    text-decoration: none;
+    font-weight: bold;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@media (max-width: 768px) {
+    .category {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}

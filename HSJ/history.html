@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>大兴安岭人文历史</title>
+    <style>
+    /* 全局样式 */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-image: url('imgs/headview.png');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 50px;
+      font-weight: bold;
+      background: linear-gradient(45deg,#a5c0d7, #00bfff, #3063d0);
+      background-size: 400% 400%;
+      background-clip: text;
+      color: transparent;
+      animation: gradientAnimation 3s ease infinite;
+    }
+
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }   
+
+    nav {
+      background-color: #2E8B57;
+      overflow: hidden;
+    }
+
+    nav ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      text-align: center;
+    }
+
+    nav ul li {
+      display: inline;
+      padding: 10px 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    #search-box {
+      display: inline-block;
+      padding: 10px 20px;
+    }
+    #search-box input[type="text"] {
+      padding: 5px;
+      font-size: 16px;
+    }
+    #search-box input[type="submit"] {
+      padding: 5px 10px;
+      font-size: 16px;
+      background-color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* 正文样式 */
+    section#content {
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin: 20px auto;
+      max-width: 800px;
+      line-height: 1.6;
+    }
+
+    h2 {
+      color: #0e0401;
+      margin-top: 20px;
+      font-size: 24px;
+      padding-bottom: 10px;
+      text-align: center;
+    }
+
+    /* 画廊样式 */
+    section#gallery {
+      overflow: hidden;
+      width: 100%;
+      background: #f0f8ff;
+      padding: 30px 0;
+    }
+
+    .gallery-container {
+      display: flex;
+      gap: 1rem;
+      animation: scrollGallery 20s linear infinite; /* 循环滚动动画 */
+    }
+
+    .gallery-container img {
+      width: calc(20% - 1rem);
+      height: auto;
+      transition: transform 0.3s ease;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .gallery-container img:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes scrollGallery {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+
+    footer {
+      background: #333;
+      color: #fff;
+      padding: 15px 0;  /* 上下内边距 */
+      display: flex;     /* 使用 flex 布局 */
+      justify-content: center;  /* 水平居中 */
+      align-items: center;      /* 垂直居中 */
+      width: 100%;      /* 宽度100% */
+      position: relative;
+      bottom: 0;
+    }
+
+    .footer-content {
+      text-align: center;  /* 确保内容在footer中居中 */
+    }
+
+    footer p {
+      margin: 0; /* 去除段落的默认外边距 */
+      font-size: 14px;
+    }
+
+
+    a {
+      color: rgb(9, 227, 125);
+      text-decoration: none;
+      font-weight: bold;
+    }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>极寒之地-大兴安岭</h1>
+        </div>
+    </header>
+    <nav>
+        <ul>
+          <li><a href="mainpage.html">首页</a></li>
+          <li><a href="plants.html">植物介绍</a></li>
+          <li><a href="animals.html">动物与生物多样性</a></li>
+          <li><a href="geography.html">地理与地貌</a></li>
+          <li><a href="history.html">人文历史</a></li>
+          <li><a href="tourism.html">旅游指南</a></li>
+          <li id="search-box">
+            <form action="/search" method="GET">
+              <input type="text" name="query" placeholder="搜索..." required>
+              <input type="submit" value="搜索">
+            </form>
+          </li>
+        </ul>
+      </nav>
+      <h2>大兴安岭人文历史</h2>
+      <section id="gallery">
+        <div class="gallery-container">
+            <img src="imgs/image1.jpg" alt="Image 1">
+            <img src="imgs/image2.jpg" alt="Image 2">
+            <img src="imgs/image3.jpg" alt="Image 3">
+            <img src="imgs/ima1.jpg" alt="Image 4">
+            <img src="imgs/ima2.jpg" alt="Image 5">
+            <img src="imgs/image1.jpg" alt="Image 6"> 
+            <img src="imgs/image2.jpg" alt="Image 7">
+            <img src="imgs/image3.jpg" alt="Image 8">
+            <img src="imgs/ima1.jpg" alt="Image 9">
+            <img src="imgs/ima2.jpg" alt="Image 10">
+        </div>
+    </section>  
+      <section id="content">
+      <h2>概述</h2>
+      <p>大兴安岭，这片古老而神秘的土地，孕育了丰富的人文历史。从旧石器时代起，这里就有人类繁衍生息，是蒙古、达斡尔、鄂伦春等民族的发祥地之一。大兴安岭不仅是中国重要的林业基地，也是东北亚地区重要的生态屏障，这里的人文历史与自然环境紧密相连，共同构成了一幅丰富多彩的历史画卷。</p>
+      
+      <h2>古人类活动</h2>
+      <p>大兴安岭地区的古人类活动可以追溯到旧石器时代。在呼玛县江湾农场等地发现的陶片、骨器、石环等文物，证明了1万年前这里就有古人类活动。这些古人类以其智慧和勇气，与恶劣的自然环境作斗争，展现了人类早期文明的曙光。</p>
+      
+      <h2>岩画遗址</h2>
+      <p>大兴安岭地区的岩画遗址是古代文明的见证。自2011年以来，共发现了38处岩画遗址，近4000幅岩画，时间跨度从新石器时代至辽金时期。这些岩画不仅记录了古代居民的日常生活，还反映了他们的宗教信仰和艺术追求，是研究古代文化的重要资料。</p>
+      
+      <h2>铁道兵开发文化</h2>
+      <p>在新中国成立后，为了开发大兴安岭的丰富森林资源，铁道兵部队在这里展开了艰苦的建设工作。他们以顽强的意志和不屈的精神，战胜了严寒和疾病的威胁，开辟了一条条通往林区的铁路，为国家的建设做出了巨大贡献。这种战严寒、破禁区的铁道兵开发文化，成为了大兴安岭精神的重要组成部分。</p>
+      
+      <h2>鄂伦春族文化</h2>
+      <p>鄂伦春族是中国北方的游猎民族之一，他们以狩猎和捕鱼为生，创造了丰富的口头文学，包括神话、传说、民间故事、谚语等。鄂伦春族的音乐舞蹈，如“鄂伦春族民歌”和“鄂伦春族舞蹈”，也是中华文化宝库中的瑰宝。鄂伦春族的非物质文化遗产项目，如萨满舞、鹿神舞等，展现了鄂伦春族独特的文化魅力。</p>
+      
+      <h2>清代皇家狩猎地</h2>
+      <p>大兴安岭地区在清代是皇家狩猎的禁地，许多贵族都在这里进行狩猎活动。这里丰富的野生动物资源，如鹿、熊、虎等，为皇家狩猎提供了良好的条件。1949年后，大兴安岭成为了新中国第一座森林城市，这里的森林资源得到了科学的保护和合理的利用。</p>
+      
+      <h2>风土人情</h2>
+      <p>大兴安岭地区的风土人情体现了人与自然的和谐共生。这里的居民尊重自然、崇尚生命，他们的生活方式与自然环境紧密相连。在长期的生产生活中，他们形成了独特的生活习惯和文化传统，如狩猎、捕鱼、采集等。这些风土人情不仅丰富了大兴安岭的文化内涵，也为研究中国北方少数民族文化提供了宝贵的资料。</p>
+    </section>
+    <footer>
+      <div class="footer-content">
+        <p>&copy; 2024 东北林业大学Web前端课程设计 | 仅供展示</p>
+      </div>
+    </footer>
+</body>
+</html>
